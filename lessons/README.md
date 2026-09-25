@@ -28,17 +28,30 @@ python3 scripts/search_vault.py "<what you are trying to remember>"
 Numbers were dropped on arrival. A number encodes sequence, which matters in a folder you scroll
 and not at all in a store you query by meaning.
 
-## What is still here
+## The one that was a proposal, not a lesson
 
-`039-externalize-role-instructions.md` — because **it is not a lesson.** It proposes extracting
-the ARCHITECT / IMPLEMENTOR / TESTER role instructions out of `orchestrator.py` string literals
-into `roles/*.md`. That is unimplemented work about this codebase, so it belongs in
-`project/tasks/`, not in a lessons folder and not in the brain. It stays here until it is filed
-as a task through the task scripts.
+`039-externalize-role-instructions.md` proposed extracting the ARCHITECT / IMPLEMENTOR / TESTER
+prompts out of `orchestrator.py` string literals into `roles/*.md`. **It was already
+implemented** — see `ai-builder/orchestrator/machines/{builder,doc}/roles/`, which is what lets
+one pipeline serve both code generation and documentation generation. So it was neither a lesson
+nor a pending task; it was a finished proposal that never got marked finished, and it sat in a
+lessons folder describing work that was already done.
 
-The general shape worth keeping: **a lesson describes something already learned; a proposal
-describes something not yet done.** Filing the second as the first is how a backlog item hides
-in a knowledge base and never gets built.
+TESTER never applied: it is a Python agent class, not a prompted role, so its absence from
+`roles/` is correct rather than incomplete.
+
+What the *implementation* taught is now in the brain as
+`externalized-prompts-must-be-self-contained` — agents run with a cwd outside the repo, so a
+role prompt cannot reference a sibling file and every rule must be inlined. That constraint is
+invisible from the proposal and only shows up once you try it.
+
+Two shapes worth keeping from this:
+
+- **A lesson describes something already learned; a proposal describes something not yet done.**
+  Filing the second as the first is how a backlog item hides in a knowledge base and never gets
+  built — or, as here, gets built and never gets closed.
+- **The implementation of an idea usually knows something the idea did not.** Harvest the lesson
+  *after* shipping, not from the design.
 
 ## Related, still in this repo
 
