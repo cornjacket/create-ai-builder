@@ -13,5 +13,4 @@
 - [ef40e2-add-session-context-document](ef40e2-add-session-context-document/)
 - [15d940-target-setup-uses-generator-for-tasks](15d940-target-setup-uses-generator-for-tasks/)
 - [abe6a1-regression-targets-must-be-git-repos](abe6a1-regression-targets-must-be-git-repos/)
-- [9bc7d9-regenerate-task-system-to-cps-v0-3-0](9bc7d9-regenerate-task-system-to-cps-v0-3-0/)
 <!-- task-list-end -->

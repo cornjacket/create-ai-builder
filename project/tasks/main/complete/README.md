@@ -62,4 +62,5 @@
 - [9d3bc1-resolve-log-md-vs-status-overlap](9d3bc1-resolve-log-md-vs-status-overlap/)
 - [8ec43a-list-tasks-by-category](8ec43a-list-tasks-by-category/)
 - [64aa37-document-standard-task-workflow](64aa37-document-standard-task-workflow/)
+- [9bc7d9-regenerate-task-system-to-cps-v0-3-0](9bc7d9-regenerate-task-system-to-cps-v0-3-0/)
 <!-- task-list-end -->

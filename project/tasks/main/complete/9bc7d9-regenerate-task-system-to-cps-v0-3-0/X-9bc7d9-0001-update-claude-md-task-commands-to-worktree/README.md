@@ -3,13 +3,13 @@
 | Field       | Value                  |
 |-------------|------------------------|
 | Task-type   | USER-SUBTASK           |
-| Status      | —                      |
+| Status | complete |
 | Epic        | main               |
 | Tags        | —               |
 | Parent      | 9bc7d9-regenerate-task-system-to-cps-v0-3-0             |
 | Priority    | —           |
 | Created     | 2026-11-17            |
-| Completed   | —                      |
+| Completed | 2026-11-17 |
 | Next-subtask-id | 0000               |
 
 ## Goal

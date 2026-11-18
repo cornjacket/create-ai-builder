@@ -3,13 +3,13 @@
 | Field       | Value                  |
 |-------------|------------------------|
 | Task-type   | USER-TASK              |
-| Status      | in-progress             |
+| Status | complete |
 | Epic        | main               |
 | Tags        | —               |
 | Priority    | MED           |
 | Category    | task-tooling           |
 | Created     | 2026-11-17            |
-| Completed   | —                      |
+| Completed | 2026-11-17 |
 | Next-subtask-id | 0002 |
 
 ## Goal
@@ -39,8 +39,8 @@ Run the generator from `git archive v0.3.0`, not the create-project-system check
 
 <!-- When a subtask is finished, run complete-task.sh --parent to mark it [x] before moving on. -->
 <!-- subtask-list-start -->
-- [ ] [9bc7d9-0000-regenerate-machinery-from-v0-3-0-tag](9bc7d9-0000-regenerate-machinery-from-v0-3-0-tag/)
-- [ ] [9bc7d9-0001-update-claude-md-task-commands-to-worktree](9bc7d9-0001-update-claude-md-task-commands-to-worktree/)
+- [x] [X-9bc7d9-0000-regenerate-machinery-from-v0-3-0-tag](X-9bc7d9-0000-regenerate-machinery-from-v0-3-0-tag/)
+- [x] [X-9bc7d9-0001-update-claude-md-task-commands-to-worktree](X-9bc7d9-0001-update-claude-md-task-commands-to-worktree/)
 <!-- subtask-list-end -->
 
 ## Notes
