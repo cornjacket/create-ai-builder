@@ -41,16 +41,16 @@ End-to-end loop for any task tracked under `project/tasks/`. Run from
 worktree class and ordered by priority:
 ```bash
 project/tasks/scripts/list-tasks.sh --epic main --folder backlog \
-    --group-by-category --sort-priority
+    --group-by-worktree --sort-priority
 ```
-Use `--category <branch>` to filter to a single worktree class.
+Use `--worktree <branch>` to filter to a single worktree class.
 
 **2. Start the task** (moves it to `in-progress/` and creates a worktree):
 ```bash
 bash bootstrap/new-workflow.sh -taskname <hex-id>-<task-name> -name <worktree-name>
 cd ../<worktree-name>
 ```
-Pick `<worktree-name>` to match the task's `Category:` branch (e.g.
+Pick `<worktree-name>` to match the task's `Worktree:` branch (e.g.
 `task-tooling`) so concurrent classes stay isolated.
 
 **3. Describe and align.** Before any implementation, state the task's
@@ -309,14 +309,15 @@ project/tasks/scripts/list-tasks.sh --epic main --folder draft --sort-priority
 project/tasks/scripts/list-tasks.sh --epic main --folder in-progress --sort-priority
 ```
 To partition the backlog by worktree class (see [`project/tasks/classes.md`](project/tasks/classes.md)),
-use `--group-by-category` for a global "what's next per class" view, or
-`--category <branch>` to filter to one worktree class:
+use `--group-by-worktree` for a global "what's next per class" view, or
+`--worktree <branch>` to filter to one worktree class:
 ```bash
-project/tasks/scripts/list-tasks.sh --epic main --folder backlog --group-by-category --sort-priority
-project/tasks/scripts/list-tasks.sh --epic main --folder backlog --category task-tooling --sort-priority
+project/tasks/scripts/list-tasks.sh --epic main --folder backlog --group-by-worktree --sort-priority
+project/tasks/scripts/list-tasks.sh --epic main --folder backlog --worktree task-tooling --sort-priority
 ```
-The literal value `unclassified` matches tasks whose `Category:` field is
-`—` or missing.
+The literal value `unclassified` matches tasks whose `Worktree:` field is
+`—` or missing. Tasks created before the v0.3.0 regeneration carry the
+same value in a `Category:` row; the scripts read both.
 
 Do NOT use `list-tasks.sh --epic main` without `--folder` when the user asks for
 outstanding or incomplete tasks — it includes `complete/` which adds noise.
@@ -362,10 +363,11 @@ outstanding or incomplete tasks — it includes `complete/` which adds noise.
 > Never refer to a task by hex ID alone (e.g. `4603fa`) — the name is required
 > for anyone reading the conversation to know what is being discussed.
 
-> **Rule:** Every new USER-TASK must have its `Category:` field set immediately
+> **Rule:** Every new USER-TASK must have its `Worktree:` field set immediately
 > after creation. Assign it the branch name of the matching worktree class from
 > [`project/tasks/classes.md`](project/tasks/classes.md). If no class fits, set
-> it to `unclassified`. Never leave `Category:` as `—` on a USER-TASK.
+> it to `unclassified`. Never leave `Worktree:` as `—` on a USER-TASK.
+> (Older tasks carry this field as `Category:`; the scripts read both.)
 
 ### Task granularity
 
@@ -397,7 +399,7 @@ linearly, TESTER can verify in one pass.
 Run from the repo root:
 
 ```bash
-project/tasks/scripts/new-user-task.sh        --epic main --folder draft --name <task> --category <branch-from-classes.md>
+project/tasks/scripts/new-user-task.sh        --epic main --folder draft --name <task> --worktree <branch-from-classes.md>
 project/tasks/scripts/new-user-subtask.sh     --epic main --folder <status> --parent <task> --name <subtask>
 project/tasks/scripts/new-pipeline-build.sh   --epic main --folder <status> --parent <task> [--name <name>]
 project/tasks/scripts/new-pipeline-subtask.sh --epic main --folder <status> --parent <task> --name <subtask>
@@ -408,7 +410,7 @@ project/tasks/scripts/show-task.sh            --epic main --folder <status> --na
 project/tasks/scripts/delete-task.sh          --epic main --folder <status> --name <task>
 project/tasks/scripts/restore-task.sh         --epic main --folder <status> --name <task>
 project/tasks/scripts/wont-do-subtask.sh      --epic main --folder <status> --parent <task> --name <subtask>
-project/tasks/scripts/list-tasks.sh           --epic main [--folder <status>] [--depth <n>] [--root <path>] [--all] [--tag <tag>] [--category <branch>] [--group-by-category] [--sort-priority]
+project/tasks/scripts/list-tasks.sh           --epic main [--folder <status>] [--depth <n>] [--root <path>] [--all] [--tag <tag>] [--worktree <branch>] [--group-by-worktree] [--sort-priority]
 project/tasks/scripts/rename-subtask.sh       --epic main --folder <status> --parent <task> --name <subtask> --new-id NNNN
 project/tasks/scripts/insert-subtask.sh       --epic main --folder <status> --parent <task> --at NNNN --name <name> [--type user|pipeline]
 ```
