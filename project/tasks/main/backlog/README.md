@@ -50,4 +50,5 @@
 - [29297c-relocate-pipeline-scripts](29297c-relocate-pipeline-scripts/)
 - [59ea60-repo-name-rename-audit](59ea60-repo-name-rename-audit/)
 - [9046c5-adopt-worktree-rename](9046c5-adopt-worktree-rename/)
+- [3a83b7-bump-vendored-create-project-system-to-v0-3-0](3a83b7-bump-vendored-create-project-system-to-v0-3-0/)
 <!-- task-list-end -->
